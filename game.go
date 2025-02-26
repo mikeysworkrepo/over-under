@@ -1,12 +1,12 @@
 package main
 
-func Dice() {
-	
-}
+import (
+	"fmt"
+	"strings"
+)
 
-type Game struct {
-	name   string
-	bet    int
-	choice string
-	payout int
+func Dice() {
+	f := strings.Fields()
+	fmt.Scanln(strings.Fields)
+
 }
