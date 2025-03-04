@@ -11,7 +11,7 @@ import (
 func main() {
 	fmt.Println("Welcome to over under dice game!")
 	fmt.Println("To place a bet, type out in this format into the channel:\n!bet name amount call (over, under or 7)")
-	fmt.Println("Wins on over or pay out double your bet. Wins on 7 payout x4 your bet")
+	fmt.Println("Payouts for winning on over/under call 1:1 - Payouts for winning on 7 call 3:1")
 	fmt.Println("Example: !bet mikey 500 under")
 
 	// valid bet choices
