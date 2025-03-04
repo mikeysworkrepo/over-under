@@ -22,6 +22,8 @@ func Roll(call string, betAmount int) string {
 		fmt.Printf("You have won! Your payout is %d!", betAmount)
 	} else if call == "over" && result <= 7 {
 		fmt.Printf("You have have lost! Your loss is %d", betAmount)
+	} else if call == "7" && result == 7 {
+		fmt.Printf("You have won! Your payout is %d!", betAmount)
 	}
 	return "You lose"
 
