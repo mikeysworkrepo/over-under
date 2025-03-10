@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	StartBot()
 	fmt.Println("Welcome to over under dice game!")
 	fmt.Println("To place a bet, type out in this format into the channel:\n!bet name amount call (over, under or 7)")
 	fmt.Println("Payouts for winning on over/under call 1:1 - Payouts for winning on 7 call 3:1")

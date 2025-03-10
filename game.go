@@ -12,19 +12,22 @@ func Roll(call string, betAmount int) string {
 	i := rand.Intn(6)
 	result := dice1[n] + dice2[i]
 
-	fmt.Println("Rolling dice...You have rolled a ", dice1[n], "\nRolling dice...You have rolled a ", dice2[i])
-	fmt.Println("Your dice total is", result)
+	// construct result message
+	message := fmt.Sprintf("🎲 Rolling dice... You rolled: %d and %d\nTotal: %d\n", dice1[n], dice2[i], result)
+
 	if call == "under" && result <= 6 {
-		fmt.Printf("You have won! Your payout is %d!", betAmount)
+		message += fmt.Sprintf("🎉 You won! Your payout is %d!", betAmount*2)
 	} else if call == "under" && result >= 7 {
-		fmt.Printf("You have have lost! Your loss is %d", betAmount)
+		message += fmt.Sprintf("❌ You lost! You lose %d.", betAmount)
 	} else if call == "over" && result >= 8 {
-		fmt.Printf("You have won! Your payout is %d!", betAmount)
+		message += fmt.Sprintf("🎉 You won! Your payout is %d!", betAmount*2)
 	} else if call == "over" && result <= 7 {
-		fmt.Printf("You have have lost! Your loss is %d", betAmount)
+		message += fmt.Sprintf("❌ You lost! You lose %d.", betAmount)
 	} else if call == "7" && result == 7 {
-		fmt.Printf("You have won! Your payout is %d!", betAmount)
+		message += fmt.Sprintf("🎉 JACKPOT! You won! Your payout is %d!", betAmount*4)
+	} else {
+		message += "❌ You lost!"
 	}
-	return "You lose"
+	return message
 
 }
