@@ -44,11 +44,11 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	fmt.Println("Received message:", m.Content) // Debugging log
+	fmt.Println("Received message:", m.Content) // debugging log
 
 	// check if the message starts with "!bet"
 	if strings.HasPrefix(m.Content, "!bet") {
-		parts := strings.Fields(m.Content) // Splits message by spaces
+		parts := strings.Fields(m.Content) // splits message by spaces
 
 		// validate command format
 		if len(parts) != 4 {
@@ -57,13 +57,13 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		}
 
 		player := parts[1]
-		betAmount, err := strconv.Atoi(parts[2]) // Convert amount to integer
+		betAmount, err := strconv.Atoi(parts[2]) // convert amount to integer
 		if err != nil {
 			s.ChannelMessageSend(m.ChannelID, "Invalid bet amount! Enter a number.")
 			return
 		}
 
-		betType := strings.ToLower(parts[3]) // Get "over", "under", or "7"
+		betType := strings.ToLower(parts[3]) // get "over", "under", or "7"
 
 		// call Roll function from game.go
 		result := Roll(betType, betAmount)
