@@ -8,6 +8,8 @@ import (
 	"strings"
 )
 
+// started deving this app as a CLI, and added discord functionality afterwords
+// so most of the printed messages will not appear in the bots response in the channel
 func main() {
 	StartBot()
 	fmt.Println("Welcome to over under dice game!")
@@ -53,6 +55,7 @@ func main() {
 		}
 
 		// if all checks pass print the bet with the amount as an int
+		// calls the Roll function with call (string) and the bet amount (int)
 		fmt.Printf("Bet place!: %s bets %d on %s! Good luck!\n", name, betAmount, call)
 		Roll(call, betAmount)
 		break
