@@ -10,6 +10,15 @@ import (
 
 // started deving this app as a CLI, and added discord functionality afterwords
 // so most of the printed messages will not appear in the bots response in the channel
+
+// * IMPORTANT *//
+// bot will need the following perms in discord to function//
+// View channels - Manage webhooks (not needed atm) - Send messages - Read message history //
+
+// to do when app is functional //
+// want to host app on server if i can find free option, or use one of my computers as the host
+// connect postgres DB for saving of highschores wins/loss ratio
+// maybe fuck around with concurency to learn it
 func main() {
 	StartBot()
 	fmt.Println("Welcome to over under dice game!")
